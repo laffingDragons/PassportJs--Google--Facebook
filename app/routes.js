@@ -56,6 +56,14 @@ module.exports = function(app, passport) {
     });
 
     // =====================================
+    // LOGOUT ==============================
+    // =====================================
+    app.get('/logout', function(req, res) {
+        req.logout();
+        res.redirect('/');
+    });
+
+    // =====================================
     // FACEBOOK ROUTES =====================
     // =====================================
     // route for facebook authentication and login
@@ -70,14 +78,21 @@ module.exports = function(app, passport) {
             failureRedirect : '/'
         }));
 
+     // =====================================
+    // GOOGLE ROUTES =======================
+    // =====================================
+    // send to google to do the authentication
+    // profile gets us their basic information including their name
+    // email gets their emails
+    app.get('/auth/google', passport.authenticate('google', { scope : ['profile', 'email'] }));
 
-    // =====================================
-    // LOGOUT ==============================
-    // =====================================
-    app.get('/logout', function(req, res) {
-        req.logout();
-        res.redirect('/');
-    });
+    // the callback after google has authenticated the user
+    app.get('/auth/google/callback',
+            passport.authenticate('google', {
+                    successRedirect : '/profile',
+                    failureRedirect : '/'
+            }));
+    
 };
 
 // route middleware to make sure a user is logged in
