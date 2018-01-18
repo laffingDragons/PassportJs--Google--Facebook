@@ -186,7 +186,7 @@ module.exports = function(passport) {
                 user.facebook.token = token;
                 user.facebook.name  = profile.name.givenName + ' ' + profile.name.familyName;
                 user.facebook.email = profile.emails[0].value;
-
+               
                 user.save(function(err) {
                     if (err)
                         throw err;
