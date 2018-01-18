@@ -56,14 +56,6 @@ module.exports = function(app, passport) {
     });
 
     // =====================================
-    // LOGOUT ==============================
-    // =====================================
-    app.get('/logout', function(req, res) {
-        req.logout();
-        res.redirect('/');
-    });
-
-    // =====================================
     // FACEBOOK ROUTES =====================
     // =====================================
     // route for facebook authentication and login
@@ -92,7 +84,15 @@ module.exports = function(app, passport) {
                     successRedirect : '/profile',
                     failureRedirect : '/'
             }));
-    
+
+    // =====================================
+    // LOGOUT ==============================
+    // =====================================
+    app.get('/logout', function(req, res) {
+        req.logout();
+        res.redirect('/');
+    });
+
 };
 
 // route middleware to make sure a user is logged in

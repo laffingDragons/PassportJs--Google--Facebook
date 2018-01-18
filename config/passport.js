@@ -118,7 +118,7 @@ module.exports = function(passport) {
 
     }));
 
-    // =========================================================================
+     // =========================================================================
     // FACEBOOK ================================================================
     // =========================================================================
     passport.use(new FacebookStrategy({
@@ -151,7 +151,7 @@ module.exports = function(passport) {
                     // if there is no user found with that facebook id, create them
                     var newUser            = new User();
 
-                     // set all of the facebook information in our user model
+                    // set all of the facebook information in our user model
                     newUser.facebook.id    = profile.id; // set the users facebook id                   
                     newUser.facebook.token = token; // we will save the token that facebook provides to the user                    
                     newUser.facebook.name  = profile.name.givenName + ' ' + profile.name.familyName; // look at the passport user profile to see how names are returned
@@ -171,6 +171,7 @@ module.exports = function(passport) {
         });
 
     }));
+    
     // =========================================================================
     // GOOGLE ==================================================================
     // =========================================================================
