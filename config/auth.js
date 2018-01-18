@@ -1,13 +1,12 @@
 // expose our config directly to our application using module.exports
 module.exports = {
 
-    'facebookAuth' : {
-        'clientID'      : '284309812093395', // your App ID
-        'clientSecret'  : '34beb03d5436b50bf5673822ccca85a7', // your App Secret
-        'callbackURL'   : 'http://localhost:3000/auth/facebook/callback',
-        'profileURL'    : 'https://graph.facebook.com/v2.5/me?fields=first_name,last_name,email',
-        'profileFields' : ['id', 'email', 'name'] // For requesting permissions from Facebook API
-    },
+  'facebookAuth': {
+    'clientID': '284309812093395',
+    'clientSecret': '34beb03d5436b50bf5673822ccca85a7',
+    'callbackURL': 'http://localhost:3000/auth/facebook/callback', // Change URL to your app
+    'profileFields': ['id', 'email', 'name'] // Add permissions as needed. Check FB API docs for what permissions are available
+  },
 
     'twitterAuth' : {
         'consumerKey'       : 'your-consumer-key-here',
