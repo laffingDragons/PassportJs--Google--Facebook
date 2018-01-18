@@ -10,7 +10,7 @@
     </style>
 </head>
 <body>
-<div class="container">
+<div class="container-fluid">
 
     <div class="page-header text-center">
         <h1><span class="fa fa-anchor"></span> Profile Page</h1>
@@ -21,8 +21,9 @@
 
         <!-- LOCAL INFORMATION -->
         <div class="col-sm-6">
-            <div class="well">
-                <h3><span class="fa fa-user"></span> Local</h3>
+            <div class="well" style="background-image: linear-gradient(135deg, rgba(42,168,109,1) 0, rgba(76,59,155,1) 100%);
+">
+                <h3 style="background:white"><span class="fa fa-user" ></span> Local</h3>
 
                     <p>
                         <strong>id</strong>: <%= user._id %><br>
@@ -34,8 +35,8 @@
         </div>
         <!-- FACEBOOK INFORMATION -->
         <div class="col-sm-6">
-            <div class="well">
-                <h3 class="text-primary"><span class="fa fa-facebook"></span> Facebook</h3>
+            <div class="well" style="background-image: linear-gradient(315deg, rgba(31,43,91,1) 0, rgba(0,175,206,1) 100%);">
+                <h3 class="text-primary" style="background:white"><span class="fa fa-facebook"></span> Facebook</h3>
 
                     <p>
                         <strong>id</strong>: <%= user.facebook.id %><br>
@@ -47,17 +48,15 @@
             </div>
         </div>
 
-        
-    </div>
 
-    <div class="container">
 
         <!-- GOOGLE INFORMATION -->
         <div class="col-sm-6">
-            <div class="well">
-                <h3 class="text-danger"><span class="fa fa-google-plus"></span> Google</h3>
+            <div class="well" style="background-image: linear-gradient(315deg, rgba(173,0,0,1) 0, rgba(232,39,87,1) 100%);
+">
+                <h3 class="text-danger" style="background:white"><span class="fa fa-google-plus"></span> Google</h3>
 
-                    <p>
+                    <p style="color:white">
                         <strong>id</strong>: <%= user.google.id %><br>
                         <strong>token</strong>: <%= user.google.token %><br>
                         <strong>email</strong>: <%= user.google.email %><br>
@@ -66,7 +65,7 @@
 
             </div>
         </div>
-
+ </div>
 </div>
 </body>
 </html>
